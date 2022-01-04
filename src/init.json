@@ -1,0 +1,69 @@
+{
+  "id": "emulator",
+  "host": "0.0.0.0",
+  "port": 1102,
+  "rack": 0,
+  "slot": 0,
+  "values": {
+    "condenser_inlet": {
+      "value": 30,
+      "db_number": 1,
+      "offset": 0,
+      "length": 4
+    },
+    "condenser_outlet": {
+      "value": 30,
+      "db_number": 1,
+      "offset": 4,
+      "length": 4
+    },
+    "value_1": {
+      "value": 30,
+      "db_number": 1,
+      "offset": 8,
+      "length": 4
+    },
+    "value_2": {
+      "value": 30,
+      "db_number": 1,
+      "offset": 12,
+      "length": 4
+    },
+    "value_3": {
+      "value": 30,
+      "db_number": 1,
+      "offset": 16,
+      "length": 4
+    },
+    "value_4": {
+      "value": 30,
+      "db_number": 1,
+      "offset": 20,
+      "length": 4
+    },
+    "value_5": {
+      "value": 30,
+      "db_number": 1,
+      "offset": 24,
+      "length": 4
+    },
+    "value_6": {
+      "value": 30,
+      "db_number": 1,
+      "offset": 28,
+      "length": 4
+    },
+    "value_7": {
+      "value": 30,
+      "db_number": 1,
+      "offset": 32,
+      "length": 4
+    },
+    "value_8": {
+      "value": 30,
+      "db_number": 1,
+      "offset": 36,
+      "length": 4
+    }
+  }
+}
