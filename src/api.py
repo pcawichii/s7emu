@@ -3,12 +3,18 @@ from flask import Flask
 from flask import request, redirect, url_for, render_template
 import interact
 import json
+import status.run as stat
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return render_template('home.html')
+    data = interact.read()
+    return render_template('home.html', data=data)
+
+@app.route('/novalues')
+def hello_no_values():
+    return render_template('home_no_values.html')
 
 
 @app.route('/upload', methods=['GET', 'POST'])
@@ -16,9 +22,10 @@ def upload():
     if request.method == 'POST':
         out = {"values": {}}
         for key in request.form:
-            out['values'][key] = {
-                'value': request.form[key] * 1
-            }
+            if request.form[key] != "":
+                out['values'][key] = {
+                    'value': request.form[key] * 1
+                }
 
         interact.set(out)
 
@@ -29,9 +36,29 @@ def upload():
 
 @app.route('/get')
 def get():
-    data = interact.read()
-    return render_template('get.html', dat = json.dumps(data))
+    data = json.dumps(interact.read(),
+                                          sort_keys=False,
+                                          indent=4,
+                                          separators=(',', ': '))
 
+    return render_template('get.html',
+                           dat=data)
+
+
+@app.route('/status')
+def status():
+    print("Status")
+    data = stat.out()
+    print(data)
+
+    return render_template('status.html', dat=data)
+
+@app.route('/selenium')
+def selenium():
+    print("Selenium")
+    data = stat.sel()
+
+    return render_template('selenium.html', dat=data)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

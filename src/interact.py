@@ -1,7 +1,9 @@
 import snap7
-from ctypes import c_int32, c_int, byref
+from ctypes import c_int32, c_int, byref, c_float, c_longlong
 import json
 import time
+from decimal import Decimal
+import struct
 
 def read():
     # Load JSON Data
@@ -21,9 +23,14 @@ def read():
         # Read
         read = reader.db_read(i.get('db_number'), i.get('offset'),
                               i.get('length'))
-        print(read)
         # Display
-        data['values'][key]['value'] = int.from_bytes(read, byteorder='big')
+        if(i.get("type") == "int"):
+            data['values'][key]['value'] = int.from_bytes(read, byteorder='big')
+        elif(i.get("type") == "float"):
+            data['values'][key]['value'] = struct.unpack('>f', read)[0]
+
+
+
     # Return all data
     return data['values']
 
@@ -48,11 +55,20 @@ def set(up):
         i = data['values'][key]
 
         # Write into PLC
-        temp = int.to_bytes(int(up['values'][key].get('value')), i.get('length'), 'big')
-        write = c_int32(int.from_bytes(temp, 'little'))
-        print(write)
-        writer.as_db_write(i.get('db_number'), i.get('offset'),
-                            i.get('length'), write)
+        # temp = int.to_bytes(int(up['values'][key].get('value')), up['values'][key].get('length'), 'big')
+        # write = c_int32(int.from_bytes(temp, 'little'))
+        # print(write)
+        # writer.as_db_write(i.get('db_number'), i.get('offset'),
+        #                     i.get('length'), write)
+        temp = 0x00
+        write = c_int32(0)
+        if i.get('type') == 'int':
+            temp = int.to_bytes(int(up['values'][key].get('value')),i.get('length'), 'big')
+            write = c_int32(int.from_bytes(temp, 'little'))
+        elif i.get('type') == 'float':
+            temp = struct.pack('>f', float(up['values'][key].get('value')))
+            write = c_int32(int.from_bytes(temp, 'little'))
+        writer.as_db_write(i.get('db_number'), i.get('offset'), i.get('length'), write)
 
         # Wait until finished writing
         check_status = c_int(-1)
@@ -72,6 +88,6 @@ if __name__ == '__main__':
     f = open("example_up.json")
     data = json.load(f)
 
-    print(read())
+    # print(read())
     set(data)
     print(read())

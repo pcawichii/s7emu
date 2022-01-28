@@ -1,0 +1,115 @@
+{
+  "plc" : {
+    "host": "0.0.0.0",
+    "port": 1102,
+    "rack": 0,
+    "slot": 0,
+    "values": {
+      "condenser_inlet_temperature": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 96,
+        "length": 4,
+        "diff": 0.5
+      },
+      "condenser_outlet_temperature": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 100,
+        "length": 4,
+        "diff": 0.5
+      },
+      "condenser_flowrate": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 264,
+        "length": 4,
+        "diff": 0.5
+      },
+      "evaporator_inlet_temperature": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 88,
+        "length": 4,
+        "diff": 0.5
+      },
+      "evaporator_outlet_temperature": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 92,
+        "length": 4,
+        "diff": 0.5
+      },
+      "evaporator_flowrate": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 260,
+        "length": 4,
+        "diff": 0.5
+      },
+      "running_hours_total": {
+        "type": "int",
+        "db_number": 80,
+        "offset": 8,
+        "length": 4,
+        "diff": 0.5
+      },
+      "running": {
+        "type": "int",
+        "db_number": 80,
+        "offset": 32,
+        "length": 1,
+        "diff": 0.5
+      },
+      "energy_supplied": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 212,
+        "length": 4,
+        "diff": 0.5
+      },
+      "high_pressure": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 40,
+        "length": 4,
+        "diff": 0.5
+      },
+      "low_pressure": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 44,
+        "length": 4,
+        "diff": 0.5
+      },
+      "economiser_pressure": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 48,
+        "length": 4,
+        "diff": 0.5
+      },
+      "evaporator_pressure": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 52,
+        "length": 4,
+        "diff": 0.5
+      },
+      "value_8": {
+        "type": "int",
+        "db_number": 80,
+        "offset": 28,
+        "length": 4,
+        "diff": 0.5
+      }
+    }
+  },
+  "sql": {
+    "device_id": "device_id",
+    "server" : "armstrong-dev.database.windows.net,1433",
+    "database" : "armstrong-dev",
+    "username" : "armstrong-dev",
+    "password" : "ArmD3v12345"
+  }
+}
