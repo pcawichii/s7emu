@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Status</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Status at {{ out['host'] }}:{{ out['port'] }}</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Status</h1>
+      <p>Looking at:</p>
+      <ul>
+        <li>PLC         : <strong> {{ out['host'] }}:{{ out['port'] }} </strong> </li>
+        <li>SQL Server  : <strong> {{ out['sql_host'] }} </strong> </li>
+
+      </ul>
+      <div id="stat_1">
+        <p>Loading PLC and SQL Status...</p>
+      </div>
+      <div id="stat_2" style="display:none">
+
+      </div>
+
+
+
+      <div id="power_1">
+        <p>Loading Azure and Power BI Status...</p>
+      </div>
+      <div id="power_2" style="display:none">
+
+      </div>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='app.js')}}"></script>
+    <style>
+      span.True {
+        color: #1d7314
+      }
+
+      span.True::before {
+        content:"✓";
+        color: white;
+        background-color: #1d7314;
+        border-radius: 50%;
+        padding: 5px;
+      }
+
+      span.False {
+        color: #690808
+      }
+
+
+      span.False::before {
+        content:"X";
+        color: white;
+        background-color: #690808;
+        border-radius: 50%;
+        padding: 5px;
+      }
+
+      li {
+        margin-bottom: 5px;
+      }
+    </style>
+  </body>
+</html>

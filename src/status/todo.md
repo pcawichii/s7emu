@@ -1,4 +1,0 @@
-- Azure
-  - Last Message
-  - Connection To Azure
-- Ensure Southbound and Northbound work

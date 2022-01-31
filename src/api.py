@@ -47,9 +47,19 @@ def get():
 
 @app.route('/status')
 def status():
-    print("Status")
+    f = open("status/init.json")
+    data = json.load(f)
+    out = {}
+    out['host'] = data['plc']['host']
+    out['port'] = data['plc']['port']
+    out['sql_host'] = data['sql']['server']
+
+    return render_template('status_home.html', out=out)
+
+
+@app.route('/status_gen')
+def status_gen():
     data = stat.out()
-    print(data)
 
     return render_template('status.html', dat=data)
 
@@ -59,6 +69,8 @@ def selenium():
     data = stat.sel()
 
     return render_template('selenium.html', dat=data)
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

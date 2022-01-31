@@ -5,69 +5,6 @@
     "rack": 0,
     "slot": 0,
     "values": {
-      "condenser_inlet_temperature": {
-        "type": "float",
-        "db_number": 80,
-        "offset": 96,
-        "length": 4,
-        "diff": 0.5
-      },
-      "condenser_outlet_temperature": {
-        "type": "float",
-        "db_number": 80,
-        "offset": 100,
-        "length": 4,
-        "diff": 0.5
-      },
-      "condenser_flowrate": {
-        "type": "float",
-        "db_number": 80,
-        "offset": 264,
-        "length": 4,
-        "diff": 0.5
-      },
-      "evaporator_inlet_temperature": {
-        "type": "float",
-        "db_number": 80,
-        "offset": 88,
-        "length": 4,
-        "diff": 0.5
-      },
-      "evaporator_outlet_temperature": {
-        "type": "float",
-        "db_number": 80,
-        "offset": 92,
-        "length": 4,
-        "diff": 0.5
-      },
-      "evaporator_flowrate": {
-        "type": "float",
-        "db_number": 80,
-        "offset": 260,
-        "length": 4,
-        "diff": 0.5
-      },
-      "running_hours_total": {
-        "type": "int",
-        "db_number": 80,
-        "offset": 8,
-        "length": 4,
-        "diff": 0.5
-      },
-      "running": {
-        "type": "int",
-        "db_number": 80,
-        "offset": 32,
-        "length": 1,
-        "diff": 0.5
-      },
-      "energy_supplied": {
-        "type": "float",
-        "db_number": 80,
-        "offset": 212,
-        "length": 4,
-        "diff": 0.5
-      },
       "high_pressure": {
         "type": "float",
         "db_number": 80,
@@ -96,10 +33,234 @@
         "length": 4,
         "diff": 0.5
       },
-      "value_8": {
-        "type": "int",
+      "liquid_injection_pressure": {
+        "type": "float",
         "db_number": 80,
-        "offset": 28,
+        "offset": 56,
+        "length": 4,
+        "diff": 0.5
+      },
+      "inlet_liquid_economiser_temperature": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 60,
+        "length": 4,
+        "diff": 0.5
+      },
+      "outlet_gas_economiser_temperature": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 64,
+        "length": 4,
+        "diff": 0.5
+      },
+      "outlet_liquid_economiser_temperature": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 68,
+        "length": 4,
+        "diff": 0.5
+      },
+      "outlet_evaporator_refrigerant_temperature": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 72,
+        "length": 4,
+        "diff": 0.5
+      },
+      "outlet_compressor_refrigerant_temperature": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 76,
+        "length": 4,
+        "diff": 0.5
+      },
+      "evaporator_differential_pressure": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 80,
+        "length": 4,
+        "diff": 0.5
+      },
+      "condenser_differential_pressure": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 84,
+        "length": 4,
+        "diff": 0.5
+      },
+      "evaporator_inlet_temperature": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 88,
+        "length": 4,
+        "diff": 0.5
+      },
+      "evaporator_outlet_temperature": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 92,
+        "length": 4,
+        "diff": 0.5
+      },
+      "condenser_inlet_temperature": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 96,
+        "length": 4,
+        "diff": 0.5
+      },
+      "condenser_outlet_temperature": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 100,
+        "length": 4,
+        "diff": 0.5
+      },
+      "compressor_oil_level": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 104,
+        "length": 4,
+        "diff": 0.5
+      },
+      "external_set_point_temperature": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 112,
+        "length": 4,
+        "diff": 0.5
+      },
+      "external_output_heat": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 116,
+        "length": 4,
+        "diff": 0.5
+      },
+      "liquid_injection_refrigerant_valve_percentage": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 120,
+        "length": 4,
+        "diff": 0.5
+      },
+      "economiser_refrigerant_valve_percentage": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 124,
+        "length": 4,
+        "diff": 0.5
+      },
+      "evaporator_refrigerant_valve_percentage": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 128,
+        "length": 4,
+        "diff": 0.5
+      },
+      "gas_warning_system_percentage": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 132,
+        "length": 4,
+        "diff": 0.5
+      },
+      "compressor_request_percentage": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 168,
+        "length": 4,
+        "diff": 0.5
+      },
+      "liquid_injection_request_percentage": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 172,
+        "length": 4,
+        "diff": 0.5
+      },
+      "economiser_request_percentage": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 176,
+        "length": 4,
+        "diff": 0.5
+      },
+      "expansion_valve_request_percentage": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 180,
+        "length": 4,
+        "diff": 0.5
+      },
+      "compressor_actual_percentage": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 188,
+        "length": 4,
+        "diff": 0.5
+      },
+      "speed_compressor_frequency": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 192,
+        "length": 4,
+        "diff": 0.5
+      },
+      "frequency_compressor_frequency": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 196,
+        "length": 4,
+        "diff": 0.5
+      },
+      "compressor_output_voltage": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 200,
+        "length": 4,
+        "diff": 0.5
+      },
+      "compressor_output_current": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 204,
+        "length": 4,
+        "diff": 0.5
+      },
+      "compressor_electrical_energy": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 212,
+        "length": 4,
+        "diff": 0.5
+      },
+      "evaporator_flow_rate": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 260,
+        "length": 4,
+        "diff": 0.5
+      },
+      "condenser_flow_rate": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 264,
+        "length": 4,
+        "diff": 0.5
+      },
+      "evaporator_refrigerating_energy": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 268,
+        "length": 4,
+        "diff": 0.5
+      },
+      "condenser_refrigerating_energy": {
+        "type": "float",
+        "db_number": 80,
+        "offset": 272,
         "length": 4,
         "diff": 0.5
       }
