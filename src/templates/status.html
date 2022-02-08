@@ -28,3 +28,17 @@
     <li>{{i}} : <span class="{{ dat['measurements_valid'][i] }}"> {{ dat['measurements_valid'][i] }} </span> </li>
   {% endfor %}
 </ul>
+
+<h2>Calculated Values Exist at SQL</h2>
+<ul>
+  {% for i in dat['calculated_exist'] %}
+    <li>{{i}} : <span class="{{ dat['calculated_exist'][i] }}"> {{ dat['calculated_exist'][i] }} </span> </li>
+  {% endfor %}
+</ul>
+
+<h2>Calculated Values Match at SQL</h2>
+<ul>
+  {% for i in dat['calculated'] %}
+    <li>{{i}} : <span class="{{ dat['calculated'][i] }}"> {{ dat['calculated'][i] }} </span> </li>
+  {% endfor %}
+</ul>

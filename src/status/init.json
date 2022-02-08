@@ -264,6 +264,13 @@
         "length": 4,
         "diff": 0.5
       }
+    },
+    "calculated": {
+      "output_heat": {
+        "diff": 0.5,
+        "values": ["condenser_outlet_temperature", "condenser_inlet_temperature", 15, "condenser_flow_rate" ],
+        "operators": ["-", "*", "*"]
+      }
     }
   },
   "sql": {

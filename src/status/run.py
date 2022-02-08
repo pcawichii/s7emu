@@ -1,6 +1,7 @@
 from .lib.sql import get_latest_message, connect_to_db
 from .lib.plc import connection_to_plc, values_at_plc
 from .lib.third_party_status import azure_status, powerbi_status
+from .lib.calc import calc
 import time
 import json
 import decimal
@@ -63,6 +64,31 @@ def out():
         else:
             ret['measurements_valid'][i] = False
 
+    calculated = data['plc']['calculated']
+    ret['calculated_exist'] = {}
+    ret['calculated'] = {}
+
+    for i in calculated:
+        print(i)
+        values = calculated[i].get('values')
+        for ind, val in enumerate(values):
+            if( isinstance(val, str) ):
+                values[ind] = plc_val[val]
+
+        check = calc(values, calculated[i].get('operators'))
+
+        sql = sql_res.get(i, None)
+        if(sql == None):
+            ret['calculated_exist'][i] = False
+            ret['calculated'][i] = False
+            continue
+
+        diff = abs(decimal.Decimal(check) - sql)
+        ret['calculated_exist'][i] = True
+        ret['calculated'][i] = diff < calculated[i].get('diff', 0.5)
+
+
+    print(ret['calculated'])
     return ret
 
 
