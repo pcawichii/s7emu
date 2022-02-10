@@ -83,7 +83,10 @@ def out():
             ret['calculated'][i] = False
             continue
 
+        print(check)
+        print(sql)
         diff = abs(decimal.Decimal(check) - sql)
+        print(diff)
         ret['calculated_exist'][i] = True
         ret['calculated'][i] = diff < calculated[i].get('diff', 0.5)
 

@@ -268,7 +268,12 @@
     "calculated": {
       "output_heat": {
         "diff": 0.5,
-        "values": ["condenser_outlet_temperature", "condenser_inlet_temperature", 15, "condenser_flow_rate" ],
+        "values": ["condenser_inlet_temperature", "condenser_outlet_temperature", 15, "condenser_flow_rate" ],
+        "operators": ["-", "*", "*"]
+      },
+      "waste_heat": {
+        "diff": 0.5,
+        "values": ["evaporator_inlet_temperature", "evaporator_outlet_temperature", 1.05, "evaporator_flow_rate" ],
         "operators": ["-", "*", "*"]
       }
     }

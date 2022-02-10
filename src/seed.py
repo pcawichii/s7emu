@@ -1,5 +1,6 @@
 import snap7
 from ctypes import c_char_p, c_int32, c_ubyte, Array, c_int, c_double, c_longlong
+from ctypes import c_int32, c_int, byref, c_float, c_longlong
 import ctypes
 import json
 import time
@@ -39,10 +40,19 @@ if __name__ == '__main__':
 
 
         writer.as_db_write(i.get('db_number'), i.get('offset'), i.get('length'), write)
-
-
+        
         # Wait to finish writing
-        time.sleep(3)
+        check_status = c_int(-1)
+        for i in range(20):
+            writer.check_as_completion(byref(check_status))
+            if check_status.value == 0:
+                break
+            time.sleep(0.5)
+        else:
+            print("Writing not finished after 10s. Terminating")
+            break
+
+
 
 
     # Begin Reading
