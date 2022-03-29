@@ -411,6 +411,28 @@
       "max": 1,
       "step": 0.01,
       "comment": "Wt59 379"
+    },
+    "malfunction": {
+      "value": 0,
+      "type": "int",
+      "db_number": 80,
+      "offset": 32,
+      "length": 4,
+      "min": 0,
+      "max": 1,
+      "step": 1,
+      "comment": "Malfunction. Subject to change"
+    },
+    "error_number": {
+      "value": 0,
+      "type": "int",
+      "db_number": 80,
+      "offset": 8,
+      "length": 4,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "comment": "Error Number. Subject to change"
     }
   }
 }
